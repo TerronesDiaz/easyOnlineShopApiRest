@@ -30,7 +30,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private long productId;
+    private Long productId;
 
     @NonNull
     @Column(name = "product_name")
@@ -40,6 +40,6 @@ public class Product {
     @Column(name="product_status")
     private String productStatus;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ProductImage> productImages = new ArrayList<>();
 }
