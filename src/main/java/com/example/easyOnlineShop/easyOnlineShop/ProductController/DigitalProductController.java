@@ -2,6 +2,7 @@ package com.example.easyOnlineShop.easyOnlineShop.ProductController;
 
 import com.example.easyOnlineShop.easyOnlineShop.Dto.DigitalProductDTO;
 import com.example.easyOnlineShop.easyOnlineShop.Service.DigitalProductService;
+import com.example.easyOnlineShop.easyOnlineShop.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,10 @@ public class DigitalProductController extends ProductController {
 
     @Autowired
     private DigitalProductService digitalProductService;
+
+    public DigitalProductController(ProductService productService) {
+        super(productService);
+    }
 
     @GetMapping(path = "/listDigitalProducts")
     public ResponseEntity<List<DigitalProductDTO>> listDigitalProducts() {
