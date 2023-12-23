@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 /**
  * Represents an image associated with a product in an e-commerce application. Mapped to the 'Product_Image' table using JPA annotations.
@@ -25,7 +26,16 @@ public class ProductImage {
     private long imageId;
 
     @Lob
-    @Column(name = "image_data", nullable = false)
-    private byte[] imageData;
+    @Column(name = "image_url", nullable = false)
+    private String imageURL;
+
+    @NonNull
+    @Column(name = "image_name", nullable = false)
+    private String imageName;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id") // This is the name of the column in table 'Product_Image' that joins the column 'product_id' in 'Product'
+    private Product product; // Inverse relationship with the entity Product.
+
 }
 
