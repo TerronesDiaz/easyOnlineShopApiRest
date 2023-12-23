@@ -1,10 +1,7 @@
 package com.example.easyOnlineShop.easyOnlineShop.Entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 /**
@@ -25,6 +22,7 @@ public class PhysicalProduct extends Product {
     @Column(name = "weight")
     private double weight;
 
+    @NonNull
     @Column(name = "dimensions")
     private String dimensions;
 
@@ -38,7 +36,7 @@ public class PhysicalProduct extends Product {
     private int stock;
 
     @Column(name = "is_perishable")
-    private boolean isPerishable;
+    private boolean perishable;
 
     @Column(name = "expiration_date")
     private LocalDate expirationDate;

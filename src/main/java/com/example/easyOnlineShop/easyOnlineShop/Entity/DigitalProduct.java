@@ -2,10 +2,7 @@ package com.example.easyOnlineShop.easyOnlineShop.Entity;
 
 import com.example.easyOnlineShop.easyOnlineShop.Enums.CommissionType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * Represents a digital product in an e-commerce platform, extending the generic Product class.
@@ -26,9 +23,11 @@ public class DigitalProduct extends Product {
     @Column(name = "file_size")
     private double fileSize;
 
+    @NonNull
     @Column(name = "format")
     private String format;
 
+    @NonNull
     @Enumerated(EnumType.STRING)
     @Column(name = "commission_type")
     private CommissionType commissionType;
