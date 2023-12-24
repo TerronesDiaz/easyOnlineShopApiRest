@@ -1,26 +1,26 @@
 
-# EasyOnlineShop API REST
+# EasyOnlineShop REST API
 
-Bienvenido al repositorio de EasyOnlineShop, una API REST construida con Spring Boot 3, Maven y Java 17.
+Welcome to the EasyOnlineShop repository, a REST API built with Spring Boot 3, Maven, and Java 17.
 
-## Prerrequisitos
+## Prerequisites
 
-Antes de comenzar, asegúrese de tener instalado lo siguiente:
+Before you begin, make sure you have installed:
 - JDK 17
 - Maven
 - MySQL
 
-## Cómo hacer Fork y Clonar el Repositorio
+## How to Fork and Clone the Repository
 
-Para contribuir o usar este proyecto en su entorno local, puede hacer fork de este repositorio y luego clonarlo usando el siguiente comando:
+To contribute or use this project in your local environment, you can fork this repository and then clone it using the following command:
 
 ```bash
 git clone https://github.com/TerronesDiaz/easyOnlineShopApiRest.git
 ```
 
-## Configuración de la Base de Datos
+## Database Configuration
 
-Antes de ejecutar la aplicación, cree una base de datos MySQL llamada `easyOnlineShop` o configure las propiedades de conexión de la base de datos en `src/main/resources/application.properties` como prefiera:
+Before running the application, create a MySQL database named `easyOnlineShop` or configure the database connection properties in `src/main/resources/application.properties` as you prefer:
 
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/easyOnlineShop?createDatabaseIfNotExist=true
@@ -28,32 +28,32 @@ spring.datasource.username=root
 spring.datasource.password=root
 ```
 
-## Cómo Ejecutar la Aplicación
+## How to Run the Application
 
-Si el proyecto incluye Maven Wrapper, puede ejecutar la aplicación sin necesidad de tener Maven instalado. En su terminal, utilice el siguiente comando:
+If the project includes Maven Wrapper, you can run the application without needing Maven installed. In your terminal, use the following command:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-En Windows, si está utilizando CMD, puede necesitar omitir `./` antes del comando.
+On Windows, if you are using CMD, you might need to omit `./` before the command.
 
-La aplicación se iniciará y estará disponible en `http://localhost:8090`.
+The application will start and be available at `http://localhost:8090`.
 
-## Endpoints de la API
+## API Endpoints
 
-La documentación de los endpoints está disponible una vez ejecutada la API REST en http://localhost:8090/doc/swagger-ui/index.html.
+The documentation for the endpoints is available once the REST API is running at http://localhost:8090/doc/swagger-ui/index.html.
 
-## Contribuir
+## Contributing
 
-Si desea contribuir al proyecto, por favor siga estos pasos:
+If you want to contribute to the project, please follow these steps:
 
-1. Haga fork del repositorio.
-2. Realice sus cambios en una nueva rama.
-3. Envíe un pull request para que sus cambios sean revisados e integrados en el proyecto principal.
+1. Fork the repository.
+2. Make your changes in a new branch.
+3. Submit a pull request for your changes to be reviewed and integrated into the main project.
 
-## Licencia
+## License
 
-Este proyecto está bajo la [Licencia MIT].
+This project is under the [MIT License].
 
-Gracias por usar y contribuir a EasyOnlineShop.
+Thank you for using and contributing to EasyOnlineShop.
