@@ -1,11 +1,11 @@
 package com.example.easyOnlineShop.easyOnlineShop.Service;
 
-import com.example.easyOnlineShop.easyOnlineShop.Dto.AuthResponse;
-import com.example.easyOnlineShop.easyOnlineShop.Dto.LoginRequest;
-import com.example.easyOnlineShop.easyOnlineShop.Dto.RegisterRequest;
+import com.example.easyOnlineShop.easyOnlineShop.Dto.AuthResponseDTO;
+import com.example.easyOnlineShop.easyOnlineShop.Dto.LoginRequestDTO;
+import com.example.easyOnlineShop.easyOnlineShop.Dto.RegisterRequestDTO;
 
 public interface AuthService {
-    AuthResponse login(LoginRequest request);
+    AuthResponseDTO login(LoginRequestDTO request);
 
-    AuthResponse register(RegisterRequest request);
+    AuthResponseDTO register(RegisterRequestDTO request);
 }
