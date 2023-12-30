@@ -40,9 +40,18 @@ On Windows, if you are using CMD, you might need to omit `./` before the command
 
 The application will start and be available at `http://localhost:8090`.
 
-## API Endpoints
+## API Endpoints Documentation
 
-The documentation for the endpoints is available once the REST API is running at http://localhost:8090/doc/swagger-ui/index.html.
+The documentation for the endpoints is available once the REST API is running at http://localhost:8090/public/doc/swagger-ui/index.html.
+
+## Accessing Protected EndPoints using Swagger
+To access the protected EndPoints, you first need to register or log in to obtain the token from the response of these public EndPoints:
+
+![img_2.png](/media/png/img_2.png)
+
+Then, you need to click on the lock button that says 'Authorize' if you want to use the token for all requests, or on the gray lock button if you only wish to apply it to a specific EndPoint. This will allow you to access the other requests that are not public and avoid the 403 error.
+
+![img_1.png](/media/png/img_1.png)
 
 ## Contributing
 
