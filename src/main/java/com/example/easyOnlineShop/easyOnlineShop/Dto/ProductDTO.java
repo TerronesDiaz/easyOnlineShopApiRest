@@ -16,6 +16,7 @@ public class ProductDTO {
 
     private long productId;
     private String productName;
+    private String productType;
     private ProductStatus productStatus;
     private List<Long> productImageIds;
 }

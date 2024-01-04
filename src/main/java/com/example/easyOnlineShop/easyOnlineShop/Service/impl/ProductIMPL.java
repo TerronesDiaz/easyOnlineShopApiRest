@@ -1,12 +1,14 @@
 package com.example.easyOnlineShop.easyOnlineShop.Service.impl;
 
 import com.example.easyOnlineShop.easyOnlineShop.Dto.ProductDTO;
+import com.example.easyOnlineShop.easyOnlineShop.Entity.DigitalProduct;
+import com.example.easyOnlineShop.easyOnlineShop.Entity.PhysicalProduct;
 import com.example.easyOnlineShop.easyOnlineShop.Entity.Product;
-import com.example.easyOnlineShop.easyOnlineShop.Enums.ProductStatus;
-import com.example.easyOnlineShop.easyOnlineShop.Repo.ProductRepository;
-import com.example.easyOnlineShop.easyOnlineShop.Repo.ProductImageRepository;
-import com.example.easyOnlineShop.easyOnlineShop.Service.ProductService;
 import com.example.easyOnlineShop.easyOnlineShop.Entity.ProductImage;
+import com.example.easyOnlineShop.easyOnlineShop.Enums.ProductStatus;
+import com.example.easyOnlineShop.easyOnlineShop.Repo.ProductImageRepository;
+import com.example.easyOnlineShop.easyOnlineShop.Repo.ProductRepository;
+import com.example.easyOnlineShop.easyOnlineShop.Service.ProductService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +44,11 @@ public class ProductIMPL implements ProductService {
         dto.setProductId(entity.getProductId());
         dto.setProductName(entity.getProductName());
         dto.setProductStatus(ProductStatus.valueOf(entity.getProductStatus()));
-
+        if (entity instanceof DigitalProduct) {
+            dto.setProductType("Digital Product");
+        } else if (entity instanceof PhysicalProduct) {
+            dto.setProductType("Physical Product");
+        }
         if (entity.getProductImages() != null) {
             // Map image IDs if present
             List<Long> imageIds = entity.getProductImages().stream()
