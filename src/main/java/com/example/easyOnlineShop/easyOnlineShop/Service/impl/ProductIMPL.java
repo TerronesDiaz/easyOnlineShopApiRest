@@ -38,6 +38,26 @@ public class ProductIMPL implements ProductService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public String deleteProductById(Long productId){
+        if (productId <= 0){
+            throw new IllegalArgumentException("A valid ID for the product was not provided");
+        }
+
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if(optionalProduct.isPresent()){
+            Product existingProduct = optionalProduct.get();
+            existingProduct.setProductStatus(String.valueOf(ProductStatus.DELETED)); // Establecer el estado directamente como enum
+            productRepository.save(existingProduct); // Guardar el cambio en la base de datos
+            return "Product successfully marked as deleted";
+        } else {
+            return "Product not found";
+        }
+    }
+
+
+
+
     // Helper method to convert an entity to a DTO
     private ProductDTO entityToDto(Product entity) {
         ProductDTO dto = new ProductDTO();
